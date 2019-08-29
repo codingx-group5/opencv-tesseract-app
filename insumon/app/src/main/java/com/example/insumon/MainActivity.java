@@ -1,25 +1,23 @@
 package com.example.insumon;
 
-import android.graphics.Bitmap;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
+import java.io.InputStream;
 
-import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import org.opencv.android.Utils;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.imgcodecs.Imgcodecs;
+//import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
-
+    TextView mTextMessage;
+    private static final String TAG = "MainActivity";
+//    private LineChart mchart;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -28,38 +26,37 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
+                    break;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
+                    Intent a = new Intent(MainActivity.this,Act1.class);
+                    startActivity(a);
+                    break;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
+                    Intent b = new Intent(MainActivity.this,Act2.class);
+                    startActivity(b);
+                    break;
             }
             return false;
         }
     };
+
+
+
+//    InputStream inputStream;
+//    String[] ids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.texv);
+        mTextMessage = findViewById(R.id.message);
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-
-//        imageView =(ImageView) findViewById(R.id.imageView);
     }
-//    ImageView imageView;
-//    public void opencv(){
-//        final Mat source = Imgcodecs.imread("C:/blood/test/145.jpg", CvType.CV_8UC1);
-//        Bitmap bitmap= Bitmap.createBitmap(source.cols(), source.rows(),Bitmap.Config.RGB_565);
-//        Utils.matToBitmap(source,bitmap);
-//        imageView.setImageBitmap(bitmap);
-//    }
 
 }
+
+
