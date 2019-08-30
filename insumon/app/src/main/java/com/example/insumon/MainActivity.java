@@ -12,7 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.InputStream;
 
-//import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     TextView mTextMessage;
