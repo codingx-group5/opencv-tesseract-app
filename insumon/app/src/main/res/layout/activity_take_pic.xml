@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hello.kaiser.customcamera.CameraSurfaceView
+    <com.example.insumon.CameraSurfaceView
         android:id="@+id/cameraSurfaceView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.hello.kaiser.customcamera.CameraTopRectView
+    <com.example.insumon.CameraTopRectView
         android:id="@+id/rectOnCamera"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

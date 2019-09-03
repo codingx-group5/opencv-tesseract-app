@@ -1,4 +1,4 @@
-package com.hello.kaiser.customcamera;
+package com.example.insumon;
 
 
 import android.app.Activity;
@@ -37,15 +37,15 @@ class CameraTopRectView extends View {
     private int lineLen;
     private int lineWidht;
     private static final int LINE_WIDTH = 5;
-    private static final int TOP_BAR_HEIGHT = 50;
-    private static final int BOTTOM_BTN_HEIGHT = 66;
+//    private static final int TOP_BAR_HEIGHT = 50;
+//    private static final int BOTTOM_BTN_HEIGHT = 66;
 
 //    private static final int TOP_BAR_HEIGHT = Constant.RECT_VIEW_TOP;
 //    private static final int BOTTOM_BTN_HEIGHT = Constant.RECT_VIEW_BOTTOM;
 
     private static final int LEFT_PADDING = 10;
     private static final int RIGHT_PADDING = 10;
-    private static final String TIPS = "请将身份证放入到方框中";
+    private static final String TIPS = "將數字對準方框";
 
     private Paint linePaint;
     private Paint wordPaint;
@@ -96,7 +96,7 @@ class CameraTopRectView extends View {
         wordPaint.setStrokeWidth(3);
         wordPaint.setTextSize(35);
 
-        rect = new Rect(rectLeft, rectTop - 80, rectRight, rectTop - 10);
+        rect = new Rect(rectLeft, rectTop - 100, rectRight, rectTop - 10);
         FontMetricsInt fontMetrics = wordPaint.getFontMetricsInt();
         baseline = rect.top + (rect.bottom - rect.top - fontMetrics.bottom + fontMetrics.top) / 2 - fontMetrics.top;
         wordPaint.setTextAlign(Paint.Align.CENTER);

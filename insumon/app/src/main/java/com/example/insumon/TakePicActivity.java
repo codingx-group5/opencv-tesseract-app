@@ -1,13 +1,14 @@
-package com.hello.kaiser.customcamera;
+package com.example.insumon;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TakePicActivity extends AppCompatActivity {
 

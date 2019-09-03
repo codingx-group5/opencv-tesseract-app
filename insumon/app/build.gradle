@@ -31,12 +31,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':openCVLibrary342')
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     implementation group: 'org.bytedeco', name: 'javacv', version: '1.3.2'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-arm'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-x86'
-    implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-arm'
-    implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-x86'
+    implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '4.1-1.4.4', classifier: 'android-arm'
+    implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '4.1-1.4.4', classifier: 'android-x86'
+    implementation group: 'org.bytedeco.javacpp-presets', name: 'leptonica', version: '1.77.0-1.4.4'
+
+    implementation 'com.rmtheis:tess-two:9.0.0'
+
 
 }

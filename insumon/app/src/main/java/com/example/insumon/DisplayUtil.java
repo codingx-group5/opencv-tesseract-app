@@ -1,4 +1,4 @@
-package com.hello.kaiser.customcamera;
+package com.example.insumon;
 
 
 import android.content.Context;

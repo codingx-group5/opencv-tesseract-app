@@ -1,4 +1,4 @@
-package com.hello.kaiser.customcamera;
+package com.example.insumon;
 
 import android.app.Activity;
 import android.content.Context;
@@ -164,7 +164,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     /**
      * 从列表中选取合适的分辨率
-     * 默认w:h = 4:3
+     * 默认w:h = 7:4
      * <p>注意：这里的w对应屏幕的height
      * h对应屏幕的width<p/>
      */
@@ -182,7 +182,8 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
         if (null == result) {
             for (Camera.Size size : pictureSizeList) {
                 float curRatio = ((float) size.width) / size.height;
-                if (curRatio == 4f / 3) {// 默认w:h = 4:3
+                if (curRatio == 7f / 4) {// 默认w:h = 7:
+
                     result = size;
                     break;
                 }
