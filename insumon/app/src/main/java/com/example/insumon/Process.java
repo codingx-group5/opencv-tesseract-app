@@ -12,6 +12,7 @@ import static org.bytedeco.javacpp.opencv_imgproc.*;
 import static org.bytedeco.javacpp.opencv_imgproc.GaussianBlur;
 import static org.bytedeco.javacpp.opencv_imgproc.cvtColor;
 import static org.bytedeco.javacpp.opencv_imgproc.COLOR_RGB2GRAY;
+import static org.bytedeco.javacpp.opencv_imgcodecs.imwrite;
 
 import org.bytedeco.javacpp.opencv_imgproc;
 import org.bytedeco.javacv.AndroidFrameConverter;
@@ -44,6 +45,8 @@ public class Process {
         //gray
         Mat gray = new Mat(mardata.rows(), mardata.cols(), mardata.type());
         cvtColor(mardata, gray, COLOR_RGB2GRAY);
+
+
         //Gaussianblur
         Mat blurred = new Mat(mardata.rows(), mardata.cols(), mardata.type());
         GaussianBlur(gray, blurred, new Size(15, 15), 0, 0, 0);
@@ -54,7 +57,7 @@ public class Process {
         //erode1  iter :2
         Mat erode1 = thresh;
         Mat element_e1 = getStructuringElement(0, new Size(3, 3));
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             erode(erode1, erode1, element_e1);
         }
 

@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.widget.ImageView;
 
 import org.bytedeco.javacpp.freenect2;
+import org.bytedeco.javacpp.opencv_core;
 import org.bytedeco.javacpp.opencv_core.Mat;
 import org.bytedeco.javacv.AndroidFrameConverter;
 import org.bytedeco.javacv.Frame;
@@ -47,6 +48,5 @@ public class ImgConvertor {
         Mat mat = converterToMat.convertToMat(fr);
         return mat;
     }
-
 
 }

@@ -220,11 +220,21 @@ public class MainActivity extends AppCompatActivity {
         mShowImage.setImageBitmap(bitmap);
 
        opencv_core.Mat roi = conver.bitmap2Mat(bitmap);
-       poss = new Process(roi);                                             //++
+
+       poss = new Process(roi);
+       Log.d("width",String.valueOf(roi.cols()));
+       Log.d("height",String.valueOf(roi.rows()));
+
+       poss.process(2251,  0);
+       mShowImage.setImageBitmap(poss.getBitmap());
+
+
+       //++
        Tess = new TesseractDetect(assetManager,file);
        String output = Tess.detectFromBitmap(poss.getBitmap());
        Log.d("output",output);
        presult.setText(output);
+
 
     }
 }

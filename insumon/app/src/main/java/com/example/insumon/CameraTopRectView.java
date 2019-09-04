@@ -70,10 +70,10 @@ class CameraTopRectView extends View {
         /*rectWidth = panelWidth
                 - UnitUtils.getInstance(activity).dip2px(
                         LEFT_PADDING + RIGHT_PADDING);*/
-        rectWidth = 350;
-        rectHeght = 200;
-//        rectWidth = panelWidth - (int) DisplayUtil.dp2px(activity, LEFT_PADDING + RIGHT_PADDING);
-//        rectHeght = (int) (rectWidth * 54 / 85.6);
+        rectWidth = 320;
+        rectHeght = 220;
+//        rectWidth = panelWidth - 12*(int) DisplayUtil.dp2px(activity, LEFT_PADDING + RIGHT_PADDING);
+//        rectHeght = (int) (rectWidth * 4 / 7);
         // 相对于此view
         rectTop = (viewHeight - rectHeght) / 2;
         rectLeft = (viewWidth - rectWidth) / 2;
