@@ -182,8 +182,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
         if (null == result) {
             for (Camera.Size size : pictureSizeList) {
                 float curRatio = ((float) size.width) / size.height;
-                if (curRatio == 7f / 4) {// 默认w:h = 7:
-
+                if (curRatio == 7f / 4) {// 默认w:h = 7:4
                     result = size;
                     break;
                 }

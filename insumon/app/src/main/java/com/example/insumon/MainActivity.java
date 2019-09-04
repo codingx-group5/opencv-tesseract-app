@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public TesseractDetect Tess;                                             //++
     private AssetManager assetManager;
     private File file;
+
+    TextView presult;
 ///
     TextView mTextMessage;
     private static final String TAG = "MainActivity";
@@ -67,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
-
+        presult = (TextView) findViewById(R.id.res);
+        assetManager=getAssets();
+        file=getFilesDir();
         activity = this;
         initView();
         initListener();
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 ////壓縮        poss.compress(roi.cols()/2,roi.rows()/2);                       //++
 //        imageView.setImageBitmap(poss.getBitmap());
 
-//        result = (TextView) findViewById(R.id.numTextView);
+        result = (TextView) findViewById(R.id.numTextView);
 
     }
 
@@ -181,9 +185,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GetPhotoCode) {
             setPic(imageFilePath);
-            roi = conver.imagev2Mat(mShowImage);                                 //++
-            poss = new Process(roi);                                             //++
-            poss.compress(roi.cols()/2,roi.rows()/2);                     //++
+//            roi = conver.imagev2Mat(mShowImage);                                 //++
+//            poss = new Process(roi);                                             //++
+//            poss.compress(roi.cols()/2,roi.rows()/2);                     //++
 //            imageView.setImageBitmap(poss.getBitmap());                        //++
 //            Tess = new TesseractDetect(assetManager,file);                       //++
 //            String output = Tess.detectFromBitmap(poss.getBitmap());             //++
@@ -212,7 +216,16 @@ public class MainActivity extends AppCompatActivity {
         bmOptions.inPurgeable = true;
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
+
         mShowImage.setImageBitmap(bitmap);
+
+       opencv_core.Mat roi = conver.bitmap2Mat(bitmap);
+       poss = new Process(roi);                                             //++
+       Tess = new TesseractDetect(assetManager,file);
+       String output = Tess.detectFromBitmap(poss.getBitmap());
+       Log.d("output",output);
+       presult.setText(output);
+
     }
 }
 

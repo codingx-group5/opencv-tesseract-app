@@ -17,7 +17,6 @@ import android.view.WindowManager;
 //import cn.jiazhengye.panda_home.common.Constant;
 //import cn.jiazhengye.panda_home.utils.DisplayUtil;
 //import cn.jiazhengye.panda_home.utils.LoggerUtil;
-
 class CameraTopRectView extends View {
 
     private int panelWidth;
@@ -37,15 +36,15 @@ class CameraTopRectView extends View {
     private int lineLen;
     private int lineWidht;
     private static final int LINE_WIDTH = 5;
-//    private static final int TOP_BAR_HEIGHT = 50;
-//    private static final int BOTTOM_BTN_HEIGHT = 66;
+    private static final int TOP_BAR_HEIGHT = 50;
+    private static final int BOTTOM_BTN_HEIGHT = 66;
 
 //    private static final int TOP_BAR_HEIGHT = Constant.RECT_VIEW_TOP;
 //    private static final int BOTTOM_BTN_HEIGHT = Constant.RECT_VIEW_BOTTOM;
 
     private static final int LEFT_PADDING = 10;
     private static final int RIGHT_PADDING = 10;
-    private static final String TIPS = "將數字對準方框";
+    private static final String TIPS = "請將數字對準方框";
 
     private Paint linePaint;
     private Paint wordPaint;
@@ -71,17 +70,17 @@ class CameraTopRectView extends View {
         /*rectWidth = panelWidth
                 - UnitUtils.getInstance(activity).dip2px(
                         LEFT_PADDING + RIGHT_PADDING);*/
-
-        rectWidth = panelWidth - (int) DisplayUtil.dp2px(activity,LEFT_PADDING + RIGHT_PADDING);
-
-        rectHeght = (int) (rectWidth * 54 / 85.6);
+        rectWidth = 350;
+        rectHeght = 200;
+//        rectWidth = panelWidth - (int) DisplayUtil.dp2px(activity, LEFT_PADDING + RIGHT_PADDING);
+//        rectHeght = (int) (rectWidth * 54 / 85.6);
         // 相对于此view
         rectTop = (viewHeight - rectHeght) / 2;
         rectLeft = (viewWidth - rectWidth) / 2;
         rectBottom = rectTop + rectHeght;
         rectRight = rectLeft + rectWidth;
 
-        lineLen = panelWidth / 8;
+        lineLen = panelWidth / 16;
 
         linePaint = new Paint();
         linePaint.setAntiAlias(true);
@@ -96,7 +95,7 @@ class CameraTopRectView extends View {
         wordPaint.setStrokeWidth(3);
         wordPaint.setTextSize(35);
 
-        rect = new Rect(rectLeft, rectTop - 100, rectRight, rectTop - 10);
+        rect = new Rect(rectLeft, rectTop - 80, rectRight, rectTop - 10);
         FontMetricsInt fontMetrics = wordPaint.getFontMetricsInt();
         baseline = rect.top + (rect.bottom - rect.top - fontMetrics.bottom + fontMetrics.top) / 2 - fontMetrics.top;
         wordPaint.setTextAlign(Paint.Align.CENTER);
@@ -110,16 +109,16 @@ class CameraTopRectView extends View {
 
         //画蒙层
         wordPaint.setColor(0xa0000000);
-        rect = new Rect(0, viewHeight/2+rectHeght/2, viewWidth, viewHeight);
+        rect = new Rect(0, viewHeight / 2 + rectHeght / 2, viewWidth, viewHeight);
         canvas.drawRect(rect, wordPaint);
 
-        rect = new Rect(0, 0, viewWidth, viewHeight/2-rectHeght/2);
+        rect = new Rect(0, 0, viewWidth, viewHeight / 2 - rectHeght / 2);
         canvas.drawRect(rect, wordPaint);
 
-        rect = new Rect(0, viewHeight/2-rectHeght/2, (viewWidth-rectWidth)/2, viewHeight/2+rectHeght/2);
+        rect = new Rect(0, viewHeight / 2 - rectHeght / 2, (viewWidth - rectWidth) / 2, viewHeight / 2 + rectHeght / 2);
         canvas.drawRect(rect, wordPaint);
 
-        rect = new Rect(viewWidth-(viewWidth-rectWidth)/2, viewHeight/2-rectHeght/2, viewWidth, viewHeight/2+rectHeght/2);
+        rect = new Rect(viewWidth - (viewWidth - rectWidth) / 2, viewHeight / 2 - rectHeght / 2, viewWidth, viewHeight / 2 + rectHeght / 2);
         canvas.drawRect(rect, wordPaint);
 
 
@@ -168,5 +167,4 @@ class CameraTopRectView extends View {
     public int getViewHeight() {
         return viewHeight;
     }
-
 }

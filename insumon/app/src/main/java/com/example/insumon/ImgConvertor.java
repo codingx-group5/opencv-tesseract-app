@@ -42,5 +42,11 @@ public class ImgConvertor {
         return mat;
     }
 
+    public Mat bitmap2Mat(Bitmap bt){
+        Frame fr = converterToBitmap.convert(bt);
+        Mat mat = converterToMat.convertToMat(fr);
+        return mat;
+    }
+
 
 }
