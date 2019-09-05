@@ -10,11 +10,13 @@
 
     <Spinner
         android:id="@+id/meal"
-        android:layout_width="108dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintStart_toStartOf="@+id/掃描血糖"
-        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
+        android:layout_width="100dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/scanNum"
+        app:layout_constraintStart_toEndOf="@+id/spinnermealtype2"
+        app:layout_constraintTop_toBottomOf="@+id/scanNum" />
 
 
     <TextView
@@ -23,6 +25,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="75dp"
+        android:gravity="center"
         android:text="@string/scanNumber"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -85,20 +88,20 @@
         android:id="@+id/time"
         android:layout_width="239dp"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
         android:text="@string/time"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/meal"
-        app:layout_constraintTop_toBottomOf="@+id/meal" />
+        app:layout_constraintStart_toStartOf="@+id/spinnermealtype2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnermealtype2" />
 
     <Button
         android:id="@+id/enter2"
         android:layout_width="98dp"
         android:layout_height="50dp"
         android:layout_marginStart="162dp"
-
         android:layout_marginTop="57dp"
         android:layout_marginEnd="162dp"
+        android:onClick="inputDataBase"
         android:text="@string/enter"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,11 +123,10 @@
 
     <Spinner
         android:id="@+id/spinnermealtype2"
-        android:layout_width="102dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintStart_toEndOf="@+id/meal"
-        app:layout_constraintTop_toBottomOf="@+id/scanNum" />
+        android:layout_width="110dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/掃描血糖"
+        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

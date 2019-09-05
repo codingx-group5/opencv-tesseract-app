@@ -59,6 +59,7 @@ public class Scanner extends AppCompatActivity {
     private File file;
     private Button manual;
     private Button enter;
+    private static String output;
 
     TextView presult;
     TextView presultbf;                                                       //檢查bf
@@ -179,6 +180,8 @@ public class Scanner extends AppCompatActivity {
 
     protected void confirmData() {
         Intent intent = new Intent(this, ScannerFinalResult.class);
+        intent.putExtra("output",output);
+        Log.d("output", output);
         startActivity(intent);
     }
 
@@ -321,10 +324,15 @@ public class Scanner extends AppCompatActivity {
 
         //++
         Tess = new TesseractDetect(assetManager, file);
-        String output = Tess.detectFromBitmap(poss.getBitmap());
+        output = Tess.detectFromBitmap(poss.getBitmap());
 //        String outputbf = Tess.detectFromBitmap_before(poss.getBitmap());               //檢查bf
         presult.setText(output);
 
+        }
+
+        public void transferOutput(){
+            Intent intent = new Intent();
+            intent.setClass(this, ScannerFinalResult.class);
 
         }
 

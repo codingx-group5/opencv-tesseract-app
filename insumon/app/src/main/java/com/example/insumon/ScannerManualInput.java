@@ -126,7 +126,6 @@ public class ScannerManualInput extends AppCompatActivity {
                 Log.d("ondateset","running");
                 date=year+"年"+correct_month+"月"+day+"日";
                 mDisplayDate.setText(date);
-
             }
         };
 
@@ -198,7 +197,7 @@ public class ScannerManualInput extends AppCompatActivity {
         indexNum+=1;
         this.readCSVThread.run();
 
-        Intent intent = new Intent(this, History.class);
+        Intent intent = new Intent(this, Chart.class);
         startActivity(intent);
 
 //        search.setDataBase(readCSVThread.getDataList());

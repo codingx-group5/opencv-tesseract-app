@@ -109,9 +109,6 @@ public class Chart extends AppCompatActivity {
 
 
 
-
-
-
 /*
 
         search.setDataBase(readCSVThread.getDataList());
@@ -167,13 +164,17 @@ public class Chart extends AppCompatActivity {
         mchart.setDragEnabled(true);
         mchart.setScaleEnabled(false);
         ArrayList<Entry> yValues = new ArrayList<>();
-        yValues.add(new Entry(0, 65));
-        yValues.add(new Entry(1, 55));
-        yValues.add(new Entry(2, 65));
-        yValues.add(new Entry(3, 25));
-        yValues.add(new Entry(4, 45));
-        yValues.add(new Entry(5, 15));
-        yValues.add(new Entry(6, 75));
+
+        ArrayList bloodSugarList = findSevenDays.bloodSugarAfterDish();
+        int indexNum = findSevenDays.findIndexNumAF();
+
+        yValues.add(new Entry(0, Integer.parseInt((String) bloodSugarList.get(indexNum-7))));
+        yValues.add(new Entry(1, Integer.parseInt((String) bloodSugarList.get(indexNum-6))));
+        yValues.add(new Entry(2, Integer.parseInt((String) bloodSugarList.get(indexNum-5))));
+        yValues.add(new Entry(3, Integer.parseInt((String) bloodSugarList.get(indexNum-4))));
+        yValues.add(new Entry(4, Integer.parseInt((String) bloodSugarList.get(indexNum-3))));
+        yValues.add(new Entry(5, Integer.parseInt((String) bloodSugarList.get(indexNum-2))));
+        yValues.add(new Entry(6, Integer.parseInt((String) bloodSugarList.get(indexNum-1))));
         LineDataSet set1 = new LineDataSet(yValues, "After Meal");
         set1.setFillAlpha(Color.GRAY);
         set1.setCircleColor(Color.GRAY);

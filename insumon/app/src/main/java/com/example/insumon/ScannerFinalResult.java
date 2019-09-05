@@ -43,6 +43,8 @@ public class ScannerFinalResult extends AppCompatActivity {
     private Spinner spinner;
     private Spinner spinner2;
     private TextView blood_sugar_result;
+    private TextView scanResult;
+    private String output;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -73,7 +75,15 @@ public class ScannerFinalResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scanner_final_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
+        scanResult = findViewById(R.id.scanNum);
+
+        Intent intent = getIntent();
+        output = intent.getStringExtra("output");
+        Log.d("output", output);
+
+        scanResult.setText(output);
+
+
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Log.d("dit2", String.valueOf(getFilesDir()));
 
@@ -87,26 +97,19 @@ public class ScannerFinalResult extends AppCompatActivity {
 
 
         spinner = (Spinner)findViewById(R.id.meal);
-        final String[] lunch = {"飯後", "飯前"};
+        final String[] lunch = {"飯前", "飯後"};
         ArrayAdapter<String> lunchList = new ArrayAdapter<>(ScannerFinalResult.this,
                 android.R.layout.simple_spinner_dropdown_item,
                 lunch);spinner.setAdapter(lunchList);
 
-        spinner2 = (Spinner)findViewById(R.id.spinnermealtype);
+        spinner2 = (Spinner)findViewById(R.id.spinnermealtype2);
         final String[] mealType = {"早餐", "午餐","晚餐"};
         ArrayAdapter<String> mealTypeList = new ArrayAdapter<>(ScannerFinalResult.this,
                 android.R.layout.simple_spinner_dropdown_item,
                 mealType);spinner2.setAdapter(mealTypeList);
 
-
-
-
-
-
-
         mDisplayDate =(TextView) findViewById(R.id.SelectDate);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
-
 
 
             @Override
@@ -115,15 +118,6 @@ public class ScannerFinalResult extends AppCompatActivity {
                 int year =cal.get(Calendar.YEAR);
                 int month =cal.get(Calendar.MONTH);
                 int day =cal.get(Calendar.DAY_OF_MONTH);
-
-//                SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
-//
-//                Date curDate = new Date(System.currentTimeMillis()) ; // 獲取當前時間
-//
-//                String str = formatter.format(curDate);
-//                mDisplayDate.setText(str);
-
-
                 DatePickerDialog dialog= new DatePickerDialog(ScannerFinalResult.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,mDateSetListener,year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -134,8 +128,10 @@ public class ScannerFinalResult extends AppCompatActivity {
         mDateSetListener =new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                Log.d(TAG, "onDateSet: date:"+year+"年"+month+"月"+day+"日");
-                String date=year+"年"+month+"月"+day+"日";
+                int correct_month = month+1;
+                Log.d(TAG, "onDateSet: date:"+year+"年"+correct_month+"月"+day+"日");
+                Log.d("ondateset","running");
+                date=year+"年"+correct_month+"月"+day+"日";
                 mDisplayDate.setText(date);
             }
         };
@@ -145,9 +141,6 @@ public class ScannerFinalResult extends AppCompatActivity {
 
         mDisplayTime =(TextView) findViewById(R.id.SelectTime);
         mDisplayTime.setOnClickListener(new View.OnClickListener() {
-
-
-
             @Override
             public void onClick(View view) {
                 Calendar cal =Calendar.getInstance();
@@ -166,20 +159,13 @@ public class ScannerFinalResult extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
                 Log.d(TAG, "onTimeSet: time:"+hourOfDay+"分"+minute+"秒");
-                String time=hourOfDay+"點"+minute+"分";
+                time=hourOfDay+"點"+minute+"分";
                 mDisplayTime.setText(time);
+
+
             }
         };
 
-
-//        enter= findViewById(R.id.enter2);
-//        enter.setOnClickListener(new Button.OnClickListener(){
-//
-//            @Override
-//            public void onClick(View view) {
-//                inputDataBase();
-//            }
-//        } );
 
     }
 
@@ -191,20 +177,23 @@ public class ScannerFinalResult extends AppCompatActivity {
 
         String eatTime = spinner.getSelectedItem().toString();
         String mealType = spinner2.getSelectedItem().toString();
-        blood_sugar_result = findViewById(R.id.scanNum);
-        String blood_sugar = blood_sugar_result.getText().toString();
+
+//        blood_sugar_result = findViewById(R.id.scanNum);
+//        String blood_sugar = blood_sugar_result.getText().toString();
 
         this.writeData2CSVThread.setDateTime(date+" "+time);
-        this.writeData2CSVThread.setBloodSugar(blood_sugar);
+        this.writeData2CSVThread.setBloodSugar(output);
         this.writeData2CSVThread.setEatTime(eatTime);
         this.writeData2CSVThread.setTime(mealType);
         this.writeData2CSVThread.run();
         this.readCSVThread.run();
 
+        Intent intent = new Intent(this, Chart.class);
+        startActivity(intent);
 
-        search.setDataBase(readCSVThread.getDataList());
-        String blood =search.searchBloodSugarAfterDish(date + time, "1");
-        Log.d("blood", blood);
+//        search.setDataBase(readCSVThread.getDataList());
+//        String blood =search.searchBloodSugarAfterDish(date + time, "1");
+//        Log.d("blood", blood);
     }
 
 }
