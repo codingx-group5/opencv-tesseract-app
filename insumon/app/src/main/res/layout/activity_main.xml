@@ -11,8 +11,28 @@
         android:id="@+id/res"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
         android:text="result"
         android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/resbefore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/resbefore"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="116dp"
+        android:text="result"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/show_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/res"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

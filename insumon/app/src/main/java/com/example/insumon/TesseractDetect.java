@@ -44,23 +44,18 @@ public class TesseractDetect {
         OCRresult=OCRresult.replaceAll(",","");
         OCRresult=OCRresult.replaceAll("-","");
         OCRresult=OCRresult.replaceAll(" ","");
-        if(OCRresult.length()==5){
-            OCRresult=OCRresult. substring( 1, 4);
-        }
-        if(OCRresult.length()==4 && OCRresult.charAt(0)=='1'){
-            OCRresult=OCRresult. substring( 1, 4);
-        }
-        if(OCRresult.length()==4 && OCRresult.charAt(3)=='1'){
-            OCRresult=OCRresult. substring( 0, 3);
+        OCRresult=OCRresult.replaceAll("E","");
+        OCRresult=OCRresult.replaceAll("\\.","");
+        if(OCRresult.length()>=4){
+            OCRresult=OCRresult.substring(OCRresult.length()-3, OCRresult.length());
         }
 
-//        OCRresult=OCRresult.replaceAll(".","");
-//        int white=OCRresult.indexOf(" ");
-//        if(white!=-1){
-//            OCRresult=OCRresult. substring( white+1,  white+4);
-//        }
-
-
+        return OCRresult;
+    }
+    public String detectFromBitmap_before(Bitmap bitImg){
+        String OCRresult = null;
+        mTess.setImage(bitImg);
+        OCRresult = mTess.getUTF8Text();
         return OCRresult;
     }
 

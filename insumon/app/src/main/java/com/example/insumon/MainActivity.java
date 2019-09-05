@@ -27,6 +27,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.bytedeco.javacpp.opencv_core;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -57,11 +59,15 @@ public class MainActivity extends AppCompatActivity {
     private File file;
 
     TextView presult;
+    TextView presultbf;                                                       //檢查bf
 ///
     TextView mTextMessage;
     private static final String TAG = "MainActivity";
 
 
+    private String datapath = "";                                             //csv路徑
+    public WriteData2CSVThread writeData2CSVThread;                           //csv畫筆
+    public static Transfer transfer = null;                                   //csv傳輸器
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         presult = (TextView) findViewById(R.id.res);
+        presultbf = (TextView) findViewById(R.id.resbefore);                //檢查bf
         assetManager=getAssets();
         file=getFilesDir();
         activity = this;
@@ -82,6 +89,41 @@ public class MainActivity extends AppCompatActivity {
 //        imageView.setImageBitmap(poss.getBitmap());
 
         result = (TextView) findViewById(R.id.numTextView);
+
+//生成檔案
+        AssetManager assetManager = getAssets();
+        File file = getFilesDir();
+        InternalStorage internalStorage = new InternalStorage(assetManager, file);
+        datapath = getFilesDir() + "/raw";
+        internalStorage.checkFile(new File(datapath));
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput("data.csv", MODE_APPEND);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        writeData2CSVThread = new WriteData2CSVThread(fos);
+
+
+        Search search = new Search();
+        Delete delete = new Delete(this);
+        Revise revise = new Revise(this);
+        Clear clear = new Clear();
+        ReadCSVThread readCSVThread = new ReadCSVThread(this);
+
+        transfer = new Transfer();
+        transfer.setWriteData2CSVThread(writeData2CSVThread);
+        transfer.setSearch(search);
+//        Log.d("hey3", String.valueOf(readCSVThread.getTest()));
+        transfer.setReader(readCSVThread);
+
+        String[] filelist= fileList();
+        for (int i =0;i<filelist.length;i++){
+            Log.d("list",filelist[i]);
+        }
+
 
     }
 
@@ -217,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
 
-        mShowImage.setImageBitmap(bitmap);
+       mShowImage.setImageBitmap(bitmap);
 
        opencv_core.Mat roi = conver.bitmap2Mat(bitmap);
 
@@ -225,16 +267,17 @@ public class MainActivity extends AppCompatActivity {
        Log.d("width",String.valueOf(roi.cols()));
        Log.d("height",String.valueOf(roi.rows()));
 
-       poss.process(2251,  0);
+       poss.process(221,  19);
        mShowImage.setImageBitmap(poss.getBitmap());
-
+       Log.d("after","ok");
 
        //++
        Tess = new TesseractDetect(assetManager,file);
        String output = Tess.detectFromBitmap(poss.getBitmap());
-       Log.d("output",output);
+       String outputbf = Tess.detectFromBitmap_before(poss.getBitmap());               //檢查bf
        presult.setText(output);
-
+       presultbf.setText(outputbf);
+                                                                                       //檢查bf
 
     }
 }

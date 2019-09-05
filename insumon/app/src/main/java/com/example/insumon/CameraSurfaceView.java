@@ -254,7 +254,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
                 Bitmap sizeBitmap = Bitmap.createScaledBitmap(bitmap,
                         topView.getViewWidth(), topView.getViewHeight(), true);
-                bm = Bitmap.createBitmap(sizeBitmap, topView.getRectLeft()-25,           //**
+                bm = Bitmap.createBitmap(sizeBitmap, topView.getRectLeft()-27,           //**
                         topView.getRectTop(),
                         topView.getRectRight() - topView.getRectLeft(),
                         topView.getRectBottom() - topView.getRectTop());// 截取

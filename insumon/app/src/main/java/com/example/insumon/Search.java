@@ -1,4 +1,6 @@
 package com.example.insumon;
+import android.util.Log;
+
 import java.io.ObjectStreamField;
 import java.util.ArrayList;
 
@@ -27,13 +29,13 @@ public class Search {
         return foundSugar;
     }
 
-    public int searchBloodSugarAfterDish( String dateTime, int time){
-        int foundSugar = 0;
-        search = new Search();
-        dataBase = search.getDataBase();
+    public String searchBloodSugarAfterDish( String dateTime, String time){
+        Log.d("searching", "running");
+        String foundSugar = "";
+
         for(int i = 0; i < dataBase.size(); i++){
-            if((((String)dataBase.get(i)[0]).equals(dateTime)) && ((int)dataBase.get(i)[2] == 1) && ((int)dataBase.get(i)[3] == time)){
-                foundSugar = (int)dataBase.get(i)[1];
+            if((((String)dataBase.get(i)[0]).equals(dateTime)) && (((String)dataBase.get(i)[2]).equals("1")) && (((String)dataBase.get(i)[3]).equals(time))){
+                foundSugar = (String) dataBase.get(i)[1];
                 break;
             }
         }

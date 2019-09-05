@@ -12,6 +12,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Act1 extends AppCompatActivity {
     TextView mTextMessage;
+    private Transfer transfer;
+    private WriteData2CSVThread writeData2CSVThread;
+    private Search search;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,5 +46,8 @@ public class Act1 extends AppCompatActivity {
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         getDelegate().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        transfer=(Transfer) getIntent().getSerializableExtra("Transfer");
+        writeData2CSVThread  = transfer.getWriteData2CSVThread();
+        search = transfer.getSearch();
     }
 }
