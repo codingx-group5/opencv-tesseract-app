@@ -10,51 +10,41 @@
 
     <Spinner
         android:id="@+id/meal"
-        android:layout_width="136dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/scanNum"
+        android:layout_width="108dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="@+id/掃描血糖"
         app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
+
 
     <TextView
         android:id="@+id/scanNum"
         android:layout_width="95dp"
         android:layout_height="35dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="75dp"
         android:text="@string/scanNumber"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
+        app:layout_constraintStart_toEndOf="@+id/掃描血糖"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/SelectTime"
         android:layout_width="227dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/selecttime"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/time"
         app:layout_constraintTop_toBottomOf="@+id/time" />
 
     <TextView
         android:id="@+id/SelectDate"
         android:layout_width="231dp"
         android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/selectdate"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <TextView
@@ -62,8 +52,7 @@
         android:layout_width="219dp"
         android:layout_height="48dp"
         android:layout_marginLeft="84dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginEnd="344dp"
         android:text="@string/title_home"
         android:textSize="24sp"
         android:visibility="gone"
@@ -73,15 +62,12 @@
 
     <TextView
         android:id="@+id/掃描血糖"
-        android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="73dp"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
         android:text="掃描結果"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,29 +75,21 @@
         android:id="@+id/date"
         android:layout_width="239dp"
         android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="73dp"
+        android:layout_marginTop="29dp"
         android:text="@string/date"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/SelectTime"
+        app:layout_constraintTop_toBottomOf="@+id/SelectTime" />
 
     <TextView
         android:id="@+id/time"
         android:layout_width="239dp"
         android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="73dp"
+        android:layout_marginTop="25dp"
         android:text="@string/time"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanNum" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/meal"
+        app:layout_constraintTop_toBottomOf="@+id/meal" />
 
     <Button
         android:id="@+id/enter2"
@@ -139,5 +117,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <Spinner
+        android:id="@+id/spinnermealtype2"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toEndOf="@+id/meal"
+        app:layout_constraintTop_toBottomOf="@+id/scanNum" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

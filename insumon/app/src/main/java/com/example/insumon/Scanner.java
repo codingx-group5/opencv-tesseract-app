@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,7 +41,7 @@ public class Scanner extends AppCompatActivity {
     private Activity activity;
     public static final int PermissionCode = 1000;
     public static final int GetPhotoCode = 1001;
-
+    private  static int SPALSH_TIME_OUT = 3000;
     private Button mBtnPic;
     private ImageView mShowImage;
     String imageFilePath;
@@ -101,7 +102,10 @@ public class Scanner extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         presult = (TextView) findViewById(R.id.res);
-//        presultbf = (TextView) findViewById(R.id.resbefore);                //檢查bf
+//        new Handler().postDelayed(new Runnable()  {
+            
+//                                  }
+
         assetManager = getAssets();
         file = getFilesDir();
         activity = this;
@@ -278,13 +282,6 @@ public class Scanner extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GetPhotoCode) {
             setPic(imageFilePath);
-      roi = conver.imagev2Mat(mShowImage);                                 //++
-      poss = new Process(roi);                                             //++
-      poss.compress(roi.cols()/2,roi.rows()/2);                     //++
-      imageView.setImageBitmap(poss.getBitmap());                        //++
-      Tess = new TesseractDetect(assetManager,file);                       //++
-      String output = Tess.detectFromBitmap(poss.getBitmap());             //++
-      result.setText(output);                                              //++
         }
     }
 
@@ -325,10 +322,8 @@ public class Scanner extends AppCompatActivity {
         //++
         Tess = new TesseractDetect(assetManager, file);
         String output = Tess.detectFromBitmap(poss.getBitmap());
-        String outputbf = Tess.detectFromBitmap_before(poss.getBitmap());               //檢查bf
+//        String outputbf = Tess.detectFromBitmap_before(poss.getBitmap());               //檢查bf
         presult.setText(output);
-        presultbf.setText(outputbf);
-        //檢查bf
 
 
         }

@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
 public class ReadCSVThread {
     private Context context;
     private FileInputStream in = null;
-    public ArrayList<Object[]>  dataList;
+    public static ArrayList<Object[]>  dataList;
     public ReadCSVThread(Context context){
         this.context = context;
     }
@@ -78,6 +78,13 @@ public class ReadCSVThread {
 //    }
 
     public ArrayList<Object[]> getDataList(){
+        Object[] test = new Object[4];
+        test = dataList.get(0);
+        Log.d("getdatalist","ok");
+        for(int i = 0; i < 4; i++) {
+            Log.d("tag5", String.valueOf(test[i]));
+        }
+
         return  dataList;
     }
     public int getTest(){

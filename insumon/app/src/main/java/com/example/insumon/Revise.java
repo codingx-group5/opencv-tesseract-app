@@ -17,7 +17,7 @@ public class Revise extends Thread {
         this.context = context;
     }
 
-    public void setRevisedSugar(String dateTime, int eatTime, int time, int sugar, int newValue) {
+    public void setRevisedSugar(String dateTime, String eatTime, String time, String sugar, String newValue) {
         try {
             newFile();
         } catch (FileNotFoundException e) {
@@ -26,19 +26,19 @@ public class Revise extends Thread {
         writeData2CSVThread = new WriteData2CSVThread(csv);
         ArrayList<Object[]> OldDataBase = getOldDataBase();
         for (int i = 0; i < oldDataBase.size(); i++) {
-            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (int) oldDataBase.get(i)[2] == eatTime && (int) oldDataBase.get(i)[3] == time) {
+            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (String) oldDataBase.get(i)[2] == eatTime && (String) oldDataBase.get(i)[3] == time) {
                 OldDataBase.get(i)[1] = newValue;
             }
         }
         for (int i = 0; i < oldDataBase.size(); i++) {
             writeData2CSVThread.setDateTime((String) OldDataBase.get(i)[0]);
             writeData2CSVThread.setBloodSugar((String) OldDataBase.get(i)[1]);
-            writeData2CSVThread.setEatTime((int) OldDataBase.get(i)[2]);
-            writeData2CSVThread.setTime((int) OldDataBase.get(i)[3]);
+            writeData2CSVThread.setEatTime((String) OldDataBase.get(i)[2]);
+            writeData2CSVThread.setTime((String) OldDataBase.get(i)[3]);
             writeData2CSVThread.run();
         }
     }
-    public void setRevisedEatTime(String dateTime, int sugar, int eatTime, int time, int newValue) {
+    public void setRevisedEatTime(String dateTime, String sugar, String eatTime, String time, String newValue) {
         writeData2CSVThread = new WriteData2CSVThread(csv);
         try {
             newFile();
@@ -47,19 +47,19 @@ public class Revise extends Thread {
         }
         ArrayList<Object[]> OldDataBase = getOldDataBase();
         for (int i = 0; i < oldDataBase.size(); i++) {
-            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (int) oldDataBase.get(i)[1] == sugar && (int) oldDataBase.get(i)[3] == time) {
+            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (String) oldDataBase.get(i)[1] == sugar && (String) oldDataBase.get(i)[3] == time) {
                 OldDataBase.get(i)[2] = newValue;
             }
         }
         for (int i = 0; i < oldDataBase.size(); i++) {
             writeData2CSVThread.setDateTime((String) OldDataBase.get(i)[0]);
             writeData2CSVThread.setBloodSugar((String) OldDataBase.get(i)[1]);
-            writeData2CSVThread.setEatTime((int) OldDataBase.get(i)[2]);
-            writeData2CSVThread.setTime((int) OldDataBase.get(i)[3]);
+            writeData2CSVThread.setEatTime((String) OldDataBase.get(i)[2]);
+            writeData2CSVThread.setTime((String) OldDataBase.get(i)[3]);
             writeData2CSVThread.run();
         }
     }
-    public void setRevisedTime(String dateTime, int sugar, int eatTime, int time, int newValue) {
+    public void setRevisedTime(String dateTime, String sugar, String eatTime, String time, String newValue) {
         writeData2CSVThread = new WriteData2CSVThread(csv);
         try {
             newFile();
@@ -68,19 +68,19 @@ public class Revise extends Thread {
         }
         ArrayList<Object[]> OldDataBase = getOldDataBase();
         for (int i = 0; i < oldDataBase.size(); i++) {
-            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (int) oldDataBase.get(i)[1] == sugar && (int) oldDataBase.get(i)[2] == eatTime) {
+            if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (String) oldDataBase.get(i)[1] == sugar && (String) oldDataBase.get(i)[2] == eatTime) {
                 OldDataBase.get(i)[3] = newValue;
             }
         }
         for (int i = 0; i < oldDataBase.size(); i++) {
             writeData2CSVThread.setDateTime((String) OldDataBase.get(i)[0]);
             writeData2CSVThread.setBloodSugar((String) OldDataBase.get(i)[1]);
-            writeData2CSVThread.setEatTime((int) OldDataBase.get(i)[2]);
-            writeData2CSVThread.setTime((int) OldDataBase.get(i)[3]);
+            writeData2CSVThread.setEatTime((String) OldDataBase.get(i)[2]);
+            writeData2CSVThread.setTime((String) OldDataBase.get(i)[3]);
             writeData2CSVThread.run();
         }
     }
-    public void setRevisedDateTime(int sugar, int eatTime, int time, String dateTime, String newValue) {
+    public void setRevisedDateTime(String sugar, String eatTime, String time, String dateTime, String newValue) {
         writeData2CSVThread = new WriteData2CSVThread(csv);
         try {
             newFile();
@@ -89,15 +89,15 @@ public class Revise extends Thread {
         }
         ArrayList<Object[]> OldDataBase = getOldDataBase();
         for (int i = 0; i < oldDataBase.size(); i++) {
-            if ((int) oldDataBase.get(i)[1] == sugar && (int) oldDataBase.get(i)[2] == eatTime && (int) oldDataBase.get(i)[3] == time){
+            if ((String) oldDataBase.get(i)[1] == sugar && (String) oldDataBase.get(i)[2] == eatTime && (String) oldDataBase.get(i)[3] == time){
                 OldDataBase.get(i)[0] = newValue;
             }
         }
         for (int i = 0; i < oldDataBase.size(); i++) {
             writeData2CSVThread.setDateTime((String) OldDataBase.get(i)[0]);
             writeData2CSVThread.setBloodSugar((String) OldDataBase.get(i)[1]);
-            writeData2CSVThread.setEatTime((int) OldDataBase.get(i)[2]);
-            writeData2CSVThread.setTime((int) OldDataBase.get(i)[3]);
+            writeData2CSVThread.setEatTime((String) OldDataBase.get(i)[2]);
+            writeData2CSVThread.setTime((String) OldDataBase.get(i)[3]);
             writeData2CSVThread.run();
         }
     }

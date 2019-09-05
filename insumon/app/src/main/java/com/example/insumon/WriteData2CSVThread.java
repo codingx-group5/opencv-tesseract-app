@@ -7,8 +7,8 @@ import java.io.FileOutputStream;
 public class WriteData2CSVThread extends Thread implements Runnable{
     public String dateTime;
     public String bloodSugarValue;
-    public int eatTime;
-    public int time;
+    public String eatTime;
+    public String time;
     private FileOutputStream csv = null;
 
     public WriteData2CSVThread(FileOutputStream csv){
@@ -50,18 +50,19 @@ public class WriteData2CSVThread extends Thread implements Runnable{
         this.bloodSugarValue = bloodSugar;
     }
 
-    private int getEatTime(){
+    private String getEatTime(){
         return eatTime;
     }
 
-    public void setEatTime(int eatTime){
+    public void setEatTime(String eatTime){
+        Log.d("setdata","ok");
         this.eatTime = eatTime;
     }
-    private int getTime(){
+    private String getTime(){
         return time;
     }
 
-    public void setTime(int time){
+    public void setTime(String time){
         this.time = time;
     }
 

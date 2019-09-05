@@ -40,6 +40,9 @@ public class ScannerFinalResult extends AppCompatActivity {
     private String date;
     private String time;
     private Button enter;
+    private Spinner spinner;
+    private Spinner spinner2;
+    private TextView blood_sugar_result;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -83,11 +86,23 @@ public class ScannerFinalResult extends AppCompatActivity {
 
 
 
-        Spinner spinner = (Spinner)findViewById(R.id.meal);
+        spinner = (Spinner)findViewById(R.id.meal);
         final String[] lunch = {"飯後", "飯前"};
         ArrayAdapter<String> lunchList = new ArrayAdapter<>(ScannerFinalResult.this,
                 android.R.layout.simple_spinner_dropdown_item,
                 lunch);spinner.setAdapter(lunchList);
+
+        spinner2 = (Spinner)findViewById(R.id.spinnermealtype);
+        final String[] mealType = {"早餐", "午餐","晚餐"};
+        ArrayAdapter<String> mealTypeList = new ArrayAdapter<>(ScannerFinalResult.this,
+                android.R.layout.simple_spinner_dropdown_item,
+                mealType);spinner2.setAdapter(mealTypeList);
+
+
+
+
+
+
 
         mDisplayDate =(TextView) findViewById(R.id.SelectDate);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -170,22 +185,22 @@ public class ScannerFinalResult extends AppCompatActivity {
 
 
     public void inputDataBase(View view) {
+//        inputSugar=findViewById(R.id.inputSugar);
+//        String blood_sugar = inputSugar.getText().toString();
         Log.d("dateTime", date+time);
-        int eatTime;
 
-        Spinner mySpinner = (Spinner) findViewById(R.id.meal);
-        String text = mySpinner.getSelectedItem().toString();
-        if (text=="飯前"){
-            eatTime=0;
-        }else eatTime=1;
+        String eatTime = spinner.getSelectedItem().toString();
+        String mealType = spinner2.getSelectedItem().toString();
+        blood_sugar_result = findViewById(R.id.scanNum);
+        String blood_sugar = blood_sugar_result.getText().toString();
 
-
-        this.writeData2CSVThread.setDateTime(date+time);
-        this.writeData2CSVThread.setBloodSugar("180");
+        this.writeData2CSVThread.setDateTime(date+" "+time);
+        this.writeData2CSVThread.setBloodSugar(blood_sugar);
         this.writeData2CSVThread.setEatTime(eatTime);
-        this.writeData2CSVThread.setTime(1);
+        this.writeData2CSVThread.setTime(mealType);
         this.writeData2CSVThread.run();
         this.readCSVThread.run();
+
 
         search.setDataBase(readCSVThread.getDataList());
         String blood =search.searchBloodSugarAfterDish(date + time, "1");

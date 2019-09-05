@@ -46,18 +46,15 @@ public class TesseractDetect {
         OCRresult=OCRresult.replaceAll(" ","");
         OCRresult=OCRresult.replaceAll("E","");
         OCRresult=OCRresult.replaceAll("\\.","");
+        OCRresult=OCRresult.replaceAll("\\+","");
+
         if(OCRresult.length()>=4){
             OCRresult=OCRresult.substring(OCRresult.length()-3, OCRresult.length());
         }
 
         return OCRresult;
     }
-    public String detectFromBitmap_before(Bitmap bitImg){
-        String OCRresult = null;
-        mTess.setImage(bitImg);
-        OCRresult = mTess.getUTF8Text();
-        return OCRresult;
-    }
+
 
 
     private void checkFile(File dir) {

@@ -39,8 +39,8 @@ public class Delete extends Thread implements Runnable{
             }else {
                 writeData2CSVThread.setDateTime((String) oldDataBase.get(i)[0]);
                 writeData2CSVThread.setBloodSugar((String) oldDataBase.get(i)[1]);
-                writeData2CSVThread.setEatTime((int) oldDataBase.get(i)[2]);
-                writeData2CSVThread.setTime((int) oldDataBase.get(i)[3]);
+                writeData2CSVThread.setEatTime((String) oldDataBase.get(i)[2]);
+                writeData2CSVThread.setTime((String) oldDataBase.get(i)[3]);
                 writeData2CSVThread.run();
             }
         }

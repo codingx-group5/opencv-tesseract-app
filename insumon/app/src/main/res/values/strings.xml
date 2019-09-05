@@ -16,4 +16,7 @@
     <string name="selecttime">時間</string>
     <string name="scanNumber">掃到的數字</string>
     <string name="record">歷史紀錄</string>
+    <string name="graph">圖表紀錄</string>
+    <string name="before_meal">飯前</string>
+    <string name="after_meal">飯後</string>
 </resources>

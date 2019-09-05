@@ -54,19 +54,17 @@ public class Process {
         Mat thresh = new Mat(mardata.rows(), mardata.cols(), mardata.type());
         adaptiveThreshold(blurred, thresh, 255, 1, 0, 221, 19);
 
-        //erode1  iter :2
-        Mat erode1 = thresh;
+        mardata= thresh;
         Mat element_e1 = getStructuringElement(0, new Size(4, 4));
-        for (int i = 0; i < 2; i++) {
-            erode(erode1, erode1, element_e1);
-        }
-
-
-        //dialte1  iter:2
-        mardata = erode1;
         Mat element_d1 = getStructuringElement(0, new Size(2, 2));
-        for (int i = 0; i < 2; i++) {
-            dilate(mardata, mardata, element_d1);
+        for(int j=0;j<3;j++){
+            for (int i = 0; i < 2; i++) {
+                erode(mardata, mardata , element_e1);
+            }
+            //dialte1  iter:2
+            for (int i = 0; i < 2; i++) {
+                dilate(mardata, mardata, element_d1);
+            }
         }
     }
 

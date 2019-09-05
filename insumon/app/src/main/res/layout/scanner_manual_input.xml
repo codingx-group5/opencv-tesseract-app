@@ -9,52 +9,44 @@
 
     <Spinner
         android:id="@+id/meal"
-        android:layout_width="136dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/inputSugar"
-        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
+        android:layout_width="101dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/spinnermealtype"
+        app:layout_constraintTop_toBottomOf="@+id/inputSugar" />
 
     <TextView
         android:id="@+id/SelectTime"
         android:layout_width="227dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/selecttime"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/time"
         app:layout_constraintTop_toBottomOf="@+id/time" />
 
     <TextView
         android:id="@+id/SelectDate"
         android:layout_width="231dp"
         android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/selectdate"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <EditText
         android:id="@+id/inputSugar"
-        android:layout_width="183dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="115dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="101dp"
         android:ems="10"
         android:inputType="number"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/掃描血糖"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/message"
@@ -72,58 +64,47 @@
 
     <TextView
         android:id="@+id/掃描血糖"
-        android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="73dp"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
         android:text="@string/inputdata"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="73dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="29dp"
         android:text="@string/date"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/SelectTime"
+        app:layout_constraintTop_toBottomOf="@+id/SelectTime" />
 
     <TextView
         android:id="@+id/time"
         android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="73dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="25dp"
         android:text="@string/time"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSugar" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/spinnermealtype"
+        app:layout_constraintTop_toBottomOf="@+id/spinnermealtype" />
 
     <Button
         android:id="@+id/enter2"
         android:layout_width="98dp"
         android:layout_height="50dp"
         android:layout_marginStart="162dp"
-        android:onClick="inputDataBase"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="162dp"
+        android:onClick="inputDataBase"
         android:text="@string/enter"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SelectDate" />
 
@@ -139,7 +120,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-
+    <Spinner
+        android:id="@+id/spinnermealtype"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/掃描血糖"
+        app:layout_constraintTop_toBottomOf="@+id/掃描血糖" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
