@@ -59,32 +59,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="308018e8-5d8d-4998-86e3-94060df51599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/raw/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Clear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Delete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/InternalStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Main2Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Main3Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/ReadCSVThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Revise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Transfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/WriteData2CSVThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Act1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Act1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/CameraSurfaceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/CameraSurfaceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Process.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/TesseractDetect.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/insumon/TesseractDetect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/app/out/" />
@@ -136,14 +111,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Process.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+            <state relative-caret-position="303">
+              <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -225,18 +209,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Act1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -298,7 +270,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_chart.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/ListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/ChartFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_one.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_two.xml" />
@@ -322,6 +293,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Process.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java" />
       </list>
     </option>
   </component>
@@ -552,7 +524,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50361013" side_tool="true" weight="0.23101777" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.84749454" visible="true" weight="0.14943457" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.84749454" visible="true" weight="0.14943457" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.15250544" side_tool="true" visible="true" weight="0.14943457" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -568,7 +540,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5016155" side_tool="true" weight="0.44379562" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.38978103" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4983845" weight="0.21605839" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Debug" order="8" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.329927" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32956383" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -642,16 +614,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scan.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -921,11 +883,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Process.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+        <state relative-caret-position="303">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/insumon/Search.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
     </entry>
