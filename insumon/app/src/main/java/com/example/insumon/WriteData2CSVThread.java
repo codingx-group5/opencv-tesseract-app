@@ -1,23 +1,8 @@
 package com.example.insumon;
 
-import android.Manifest;
-import android.content.Context;
 import android.util.Log;
 
-import com.example.insumon.MainActivity;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class WriteData2CSVThread extends Thread implements Runnable{
     public String dateTime;

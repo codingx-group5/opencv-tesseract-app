@@ -3,8 +3,6 @@ package com.example.insumon;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import com.example.insumon.MainActivity;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

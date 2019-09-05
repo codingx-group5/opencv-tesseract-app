@@ -3,7 +3,7 @@ package com.example.insumon;
 import java.util.ArrayList;
 
 public class Clear {
-    private MainActivity app;
+    private Scanner app;
     private ArrayList<Object[]> oldDataBase ;
 
     public void run(){

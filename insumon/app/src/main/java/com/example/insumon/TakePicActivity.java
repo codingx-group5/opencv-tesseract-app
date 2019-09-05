@@ -40,7 +40,7 @@ public class TakePicActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         // 全屏显示
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_take_pic);
+        setContentView(R.layout.scanner_take_picture);
     }
 
 
