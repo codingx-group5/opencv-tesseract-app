@@ -18,12 +18,12 @@ public class Revise extends Thread {
     }
 
     public void setRevisedSugar(String dateTime, int eatTime, int time, int sugar, int newValue) {
-        writeData2CSVThread = new WriteData2CSVThread(csv);
         try {
             newFile();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        writeData2CSVThread = new WriteData2CSVThread(csv);
         ArrayList<Object[]> OldDataBase = getOldDataBase();
         for (int i = 0; i < oldDataBase.size(); i++) {
             if (((String) oldDataBase.get(i)[0]).equals(dateTime) && (int) oldDataBase.get(i)[2] == eatTime && (int) oldDataBase.get(i)[3] == time) {

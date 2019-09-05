@@ -21,12 +21,12 @@ public class Delete extends Thread implements Runnable{
     @Override
     public void run(){
         Log.d("delete", "running" );
-        writeData2CSVThread = new WriteData2CSVThread(csv);
         try {
             newFile();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        writeData2CSVThread = new WriteData2CSVThread(csv);
         String[] newfileList = context.fileList();
         for(int i = 0; i < newfileList.length; i++){
             Log.d("newFileList", newfileList[i]);
