@@ -66,12 +66,12 @@ public class Search {
         return foundTime;
     }
 
-    public String searchDateTime(String sugar, String eatTime, String time){
+    public String searchDateTime(String sugar, String eatTime, String time) {
         String foundDateTime = null;
         dataBase = getDataBase();
-        for(int i = 0; i < dataBase.size(); i++){
-            if((((String)dataBase.get(i)[1]).equals(sugar)) && (((String)dataBase.get(i)[2]).equals(eatTime)) && (((String)dataBase.get(i)[3]).equals(time))){
-                foundDateTime = (String)(dataBase.get(i)[0]);
+        for (int i = 0; i < dataBase.size(); i++) {
+            if ((((String) dataBase.get(i)[1]).equals(sugar)) && (((String) dataBase.get(i)[2]).equals(eatTime)) && (((String) dataBase.get(i)[3]).equals(time))) {
+                foundDateTime = (String) (dataBase.get(i)[0]);
                 break;
             }
         }

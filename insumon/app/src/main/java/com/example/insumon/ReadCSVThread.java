@@ -43,7 +43,7 @@ public class ReadCSVThread {
                 line = reader.readLine();
 // 資料元素分為一行
                 StringTokenizer st = new StringTokenizer(line, ",");
-                Object[] tokens = new Object[4];
+                String[] tokens = new String[4];
                 int colIndex = 0;
                 while (st.hasMoreTokens()) {
 // 每個元素都顯示在一個製表符分隔的線

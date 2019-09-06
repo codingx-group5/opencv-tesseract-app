@@ -34,7 +34,8 @@ public class Chart extends AppCompatActivity {
     private ReadCSVThread readCSVThread;
     private Search search;
     private  Transfer transfer = Scanner.transfer;
-    private FindSevenDays findSevenDays;
+    public static FindSevenDays findSevenDays;
+    private Intent b;
 //    private int IndexNum;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -49,6 +50,7 @@ public class Chart extends AppCompatActivity {
                     break;
                 case R.id.navigation_dashboard:
                     Intent b = new Intent(Chart.this, History.class);
+
                     startActivity(b);
                     break;
 

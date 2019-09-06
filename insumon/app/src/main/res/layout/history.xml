@@ -11,8 +11,6 @@
         android:id="@+id/message1"
         android:layout_width="373dp"
         android:layout_height="69dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="284dp"
         android:gravity="center"
         android:text="歷史紀錄"
         android:textSize="40sp"
@@ -30,6 +28,142 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/rec2"
+        android:layout_width="228dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="@+id/rec1"
+        app:layout_constraintStart_toStartOf="@+id/rec1"
+        app:layout_constraintTop_toBottomOf="@+id/rec1" />
+
+    <TextView
+        android:id="@+id/rec1"
+        android:layout_width="228dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="48dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/message1" />
+
+    <TextView
+        android:id="@+id/rec6"
+        android:layout_width="231dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="@+id/rec5"
+        app:layout_constraintStart_toStartOf="@+id/rec5"
+        app:layout_constraintTop_toBottomOf="@+id/rec5" />
+
+    <TextView
+        android:id="@+id/rec4"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="@+id/rec3"
+        app:layout_constraintStart_toStartOf="@+id/rec3"
+        app:layout_constraintTop_toBottomOf="@+id/rec3" />
+
+    <TextView
+        android:id="@+id/rec5"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="@+id/rec4"
+        app:layout_constraintStart_toStartOf="@+id/rec4"
+        app:layout_constraintTop_toBottomOf="@+id/rec4" />
+
+    <TextView
+        android:id="@+id/rec3"
+        android:layout_width="230dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:text="2019年9月6日 11點41分 早餐 飯前"
+        app:layout_constraintEnd_toEndOf="@+id/rec2"
+        app:layout_constraintStart_toStartOf="@+id/rec2"
+        app:layout_constraintTop_toBottomOf="@+id/rec2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="26dp"
+        android:gravity="center_horizontal"
+        android:text="78"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
+        android:text="108"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="154"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:text="104"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="31dp"
+        android:gravity="center"
+        android:text="133"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="42dp"
+        android:gravity="center"
+        android:text="130"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
